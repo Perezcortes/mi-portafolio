@@ -1,33 +1,37 @@
-import { FaReact } from 'react-icons/fa'
-import { SiNextdotjs } from 'react-icons/si'
-import { ComponentType } from 'react'
+import { LucideIcon, Laptop2, Code2, Rocket } from 'lucide-react'
 
 export interface Project {
   title: string
   description: string
   technologies: string[]
-  icon: ComponentType<{ size?: number }>
   githubUrl?: string
   liveUrl?: string
+  icon?: LucideIcon
 }
 
 export const projects: Project[] = [
   {
-    title: 'Sistema de Gestión Académica',
-    description:
-      'Plataforma completa para gestión de estudiantes, profesores y cursos con autenticación JWT.',
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
-    icon: FaReact,
-    githubUrl: 'https://github.com/Perezcortes/AI-NASA',
+    title: 'AIQuizHub',
+    description: 'Plataforma de exámenes automáticos con evaluación por IA para profesores y estudiantes.',
+    technologies: ['Next.js', 'FastAPI', 'MySQL', 'TailwindCSS', 'Docker'],
+    githubUrl: 'https://github.com/perezcortes/aiquizhub',
+    liveUrl: '',
+    icon: Code2
   },
   {
-    title: 'E-commerce Full Stack',
-    description:
-      'Tienda online con carrito de compras, pasarela de pagos y panel administrativo.',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
-    icon: SiNextdotjs,
-    githubUrl: 'https://github.com/Perezcortes/AI-NASA',
-    liveUrl: 'https://ecommerce-joseprz.vercel.app',
+    title: 'Deja Vu Body Art',
+    description: 'Sitio web para automatizacion de tareas para Deja Vu Body Art',
+    technologies: ['PHP', 'Apache', 'Express', 'MySQL', 'Docker'],
+    githubUrl: 'https://github.com/Perezcortes/proyectoweb.git',
+    liveUrl: '',
+    icon: Laptop2
   },
-  // Agrega más proyectos si deseas...
+  {
+    title: 'AI-NASA',
+    description: 'Explora el universo con información de la NASA, comandos por voz e IA.',
+    technologies: ['Next.js', 'TailwindCSS', 'NASA API', 'Web Speech API'],
+    githubUrl: 'https://github.com/perezcortes/ai-nasa',
+    liveUrl: 'https://ai-nasa.vercel.app',
+    icon: Rocket
+  }
 ]

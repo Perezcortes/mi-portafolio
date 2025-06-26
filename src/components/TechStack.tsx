@@ -1,36 +1,48 @@
 'use client'
 
-import { skills } from '../config/skills'
+import { skillCategories } from '../config/skills'
 import { motion } from 'framer-motion'
 
 export function TechStack() {
   return (
-    <div className="mt-16">
-      <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-8">
-        Tecnologías que uso
-      </h3>
+    <section className="mt-16">
+      <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">
+        Mi <span className="text-blue-500">Stack</span> Tecnológico
+      </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        {skills.map((skill, index) => {
-          const Icon = skill.icon
-          return (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05 }}
-              className="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="text-4xl mb-2">
-                <Icon size={40} />
-              </div>
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                {skill.name}
-              </span>
-            </motion.div>
-          )
-        })}
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {skillCategories.map((category) => (
+          <motion.div 
+            key={category.category}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700"
+          >
+            <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-gray-200 border-b pb-2 border-gray-200 dark:border-gray-700">
+              {category.category}
+            </h3>
+            
+            <div className="grid grid-cols-3 gap-4">
+              {category.items.map((skill) => (
+                <motion.div
+                  key={skill.name}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex flex-col items-center p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <div 
+                    className="p-3 rounded-lg mb-2"
+                    style={{ backgroundColor: `${skill.color}20`, color: skill.color }}
+                  >
+                    {skill.icon}
+                  </div>
+                  <span className="text-sm text-center text-gray-700 dark:text-gray-300">{skill.name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </section>
   )
 }

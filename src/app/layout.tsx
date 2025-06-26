@@ -4,6 +4,7 @@ import './globals.css'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { ThemeProvider } from '../components/ThemeProvider'
+import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,9 @@ export default function RootLayout({
     <html lang="es" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider>
+          {/* Toaster aquí */}
+          <Toaster position="top-right" />
+          
           <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
             <Navbar />
             <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12">
