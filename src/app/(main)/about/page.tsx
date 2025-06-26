@@ -1,5 +1,4 @@
 import { AnimatedText } from '../../../components/AnimatedText'
-import { TechStack } from '../../../components/TechStack'
 import { Briefcase, GraduationCap, Award, Mountain, Fish, BookOpen } from 'lucide-react'
 
 export default function AboutPage() {

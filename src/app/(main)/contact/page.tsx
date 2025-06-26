@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { AnimatedText } from '../../../components/AnimatedText'
 import { motion } from 'framer-motion'
-import { Mail, Phone, Send, Loader2, MessageCircle } from 'lucide-react'
+import { Mail, Send, Loader2, MessageCircle } from 'lucide-react'
 import { Button } from '../../../components/ui/button'
 
 export default function ContactPage() {
@@ -41,6 +41,7 @@ export default function ContactPage() {
         setStatus('error')
       }
     } catch (err) {
+      console.error('Error al enviar el mensaje:', err)
       toast.dismiss(loadingToast)
       toast.error('Error de red. Intenta de nuevo.')
       setStatus('error')
@@ -51,8 +52,8 @@ export default function ContactPage() {
     <div className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <AnimatedText 
-            text="Contacto" 
+          <AnimatedText
+            text="Contacto"
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent"
           />
           <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
@@ -82,8 +83,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800 dark:text-gray-200">Correo Electrónico</h4>
-                  <a 
-                    href="mailto:perezcortes05prz@gmail.com" 
+                  <a
+                    href="mailto:perezcortes05prz@gmail.com"
                     className="text-blue-600 dark:text-blue-400 hover:underline"
                   >
                     perezcortes05prz@gmail.com
@@ -97,8 +98,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-800 dark:text-gray-200">WhatsApp</h4>
-                  <a 
-                    href="https://wa.me/529531447499" 
+                  <a
+                    href="https://wa.me/529531447499"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-600 dark:text-green-400 hover:underline"
@@ -131,7 +132,7 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Correo Electrónico
@@ -145,7 +146,7 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Mensaje
@@ -159,7 +160,7 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                
+
                 <div className="pt-2">
                   <motion.div
                     whileHover={{ scale: 1.02 }}
@@ -196,7 +197,7 @@ export default function ContactPage() {
                           </motion.span>
                           <motion.div
                             initial={{ x: -100, opacity: 0 }}
-                            animate={{ 
+                            animate={{
                               x: isHovered ? 0 : -100,
                               opacity: isHovered ? 1 : 0
                             }}

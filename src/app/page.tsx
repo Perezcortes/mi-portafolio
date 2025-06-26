@@ -2,7 +2,6 @@
 
 import { AnimatedText } from '../components/AnimatedText'
 import { TechStack } from '../components/TechStack'
-import { SocialIcons } from '../components/SocialIcons'
 import Link from 'next/link'
 import { Button } from '../components/ui/button'
 import { MoveRight, Download, ArrowDown, ChevronRight, Eye, Linkedin, Github, Mail } from 'lucide-react'

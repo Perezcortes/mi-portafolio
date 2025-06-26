@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 import { loadSlim } from 'tsparticles-slim'
-import { tsParticles, type Engine } from 'tsparticles-engine'
+import { tsParticles } from 'tsparticles-engine'
 
 export function ParticlesBackground() {
   useEffect(() => {
